@@ -755,6 +755,9 @@ public:
     //
 
     /** Finds the index of the last (highest) set bit.
+     *
+     * @return The index of the highest set bit, or std::numeric_limits<Size>::max()
+     *         if no bit is set.
      */
     Size find_last() const noexcept
     {
@@ -766,7 +769,7 @@ public:
                 return idx + LIMB_BITS * (i - 1);
             }
         }
-        return -1;
+        return std::numeric_limits<Size>::max();
     }
 
     /** Counts the number of all set bits inside the set.

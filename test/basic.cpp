@@ -286,7 +286,7 @@ TEST_CASE("Fbitset has basic behaviour")
             i.flip(2);
 
             auto fin = i.find_last();
-            CHECK(fin == -1);
+            CHECK(fin == std::numeric_limits<Size>::max());
         });
     }
 
