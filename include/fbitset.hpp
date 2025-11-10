@@ -49,17 +49,17 @@ namespace internal {
      *
      * The input cannot be zero.
      */
-    inline Size clz(unsigned int x) { return __builtin_clz(x); }
-    inline Size clz(unsigned long x) { return __builtin_clzl(x); }
-    inline Size clz(unsigned long long x) { return __builtin_clzll(x); }
+    inline Size clz(unsigned int x) { return static_cast<Size>(__builtin_clz(x)); }
+    inline Size clz(unsigned long x) { return static_cast<Size>(__builtin_clzl(x)); }
+    inline Size clz(unsigned long long x) { return static_cast<Size>(__builtin_clzll(x)); }
 
     /** Counts the number of trailing zeros.
      *
      * The input cannot be zero.
      */
-    inline Size ctz(unsigned int x) { return __builtin_ctz(x); }
-    inline Size ctz(unsigned long x) { return __builtin_ctzl(x); }
-    inline Size ctz(unsigned long long x) { return __builtin_ctzll(x); }
+    inline Size ctz(unsigned int x) { return static_cast<Size>(__builtin_ctz(x)); }
+    inline Size ctz(unsigned long x) { return static_cast<Size>(__builtin_ctzl(x)); }
+    inline Size ctz(unsigned long long x) { return static_cast<Size>(__builtin_ctzll(x)); }
 
     /** Finds the index of the first set bit.
      *
@@ -73,11 +73,11 @@ namespace internal {
 
     /** Counts the number of set bits.
      */
-    inline Size popcount(unsigned int x) { return __builtin_popcount(x); }
-    inline Size popcount(unsigned long x) { return __builtin_popcountl(x); }
+    inline Size popcount(unsigned int x) { return static_cast<Size>(__builtin_popcount(x)); }
+    inline Size popcount(unsigned long x) { return static_cast<Size>(__builtin_popcountl(x)); }
     inline Size popcount(unsigned long long x)
     {
-        return __builtin_popcountll(x);
+        return static_cast<Size>(__builtin_popcountll(x));
     }
 }
 

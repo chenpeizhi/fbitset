@@ -70,7 +70,7 @@ TEST_CASE("Fbitset has basic behaviour")
             using Curr = std::decay_t<decltype(i)>;
 
             // This could give very good coverage of different branches.
-            for (Size n_set : { 0, 16, 32, 48, 64 }) {
+            for (Size n_set : { Size(0), Size(16), Size(32), Size(48), Size(64) }) {
                 Curr curr(n_set, true);
                 CHECK(curr.size() >= n_set);
                 for (Size j = 0; j < curr.size(); ++j) {
